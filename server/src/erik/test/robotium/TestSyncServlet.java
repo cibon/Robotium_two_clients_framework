@@ -49,10 +49,10 @@ public class TestSyncServlet extends HttpServlet {
 			return ;
 		}
 		
-		if(clientAReady.equals("unknown")){//passenger request
+		if(clientAReady.equals("unknown")){//clientB request
 			GlobalResource.clientBMark = "ready";
 			clientAReady = GlobalResource.clientAMark;
-		}else if (clientBReady.equals("unknown")){//driver request
+		}else if (clientBReady.equals("unknown")){//clientA request
 			GlobalResource.clientAMark = "ready";
 			clientBReady = GlobalResource.clientBMark;
 		}
