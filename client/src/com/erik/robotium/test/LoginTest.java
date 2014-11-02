@@ -52,9 +52,9 @@ public class LoginTest extends ActivityInstrumentationTestCase2<ClientAActivity>
 	};
 
 	
-	public void testSendOnceOrder() throws Exception{
+	public void testSync() throws Exception{
 		while(ClientBReady.equals("notReady")){
-			NetManager.TestSyncServlet("testSendOnceOrder", "unknown", "ready", syncHandler);
+			NetManager.TestSyncServlet("testSync", "unknown", "ready", syncHandler);
 			Thread.sleep(5000);
 		}	
 		//robotium control code
