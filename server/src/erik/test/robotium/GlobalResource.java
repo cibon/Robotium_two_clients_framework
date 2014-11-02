@@ -1,6 +1,6 @@
 package erik.test.robotium;
 
 public class GlobalResource {
-	public static String driverMark = "notReady";
-	public static String passengerMark = "notReady";
+	public static String clientAMark = "notReady";
+	public static String clientBMark = "notReady";
 }

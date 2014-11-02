@@ -23,7 +23,7 @@ import erik.test.robotium.GlobalResource;
 		initParams = { 
 				@WebInitParam(name = "clientAReady", value = ""), 
 				@WebInitParam(name = "clientBReady", value = ""), 
-				@WebInitParam(name = "passengerReady", value = "")
+				@WebInitParam(name = "testMethodName", value = "")
 		})
 public class TestSyncServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -50,17 +50,16 @@ public class TestSyncServlet extends HttpServlet {
 		}
 		
 		if(clientAReady.equals("unknown")){//passenger request
-			GlobalResource.passengerMark = "ready";
-			clientAReady = GlobalResource.driverMark;
+			GlobalResource.clientBMark = "ready";
+			clientAReady = GlobalResource.clientAMark;
 		}else if (clientBReady.equals("unknown")){//driver request
-			GlobalResource.driverMark = "ready";
-			clientBReady = GlobalResource.passengerMark;
+			GlobalResource.clientAMark = "ready";
+			clientBReady = GlobalResource.clientBMark;
 		}
 		response.setContentType("text/plain");
-//		PrintWriter out = response.getWriter();
-//		out.println("test");
-		response.getWriter().println("Hello World!1111");
-//		response.getWriter().print("{success:true,info:'Successfully !!!'}");
+		PrintWriter out = response.getWriter();
+		out.println("test");
+
 		
 	}
 
